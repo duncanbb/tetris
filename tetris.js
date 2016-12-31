@@ -145,17 +145,6 @@ function draw() {
   drawShape(board, {x: 0, y:0});
 }
 
-function drop() {
-  player.position.y++;
-  dropCounter = 0;
-  if (hit(board, player)) {
-    player.position.y--;
-    updateBoard(board, player);
-    playerReset();
-    clearLines();
-  }
-}
-
 function updateBoard(board, player) {
   player.currentPiece.forEach((row, yIndex) => {
     row.forEach((value, xIndex) => {
@@ -167,76 +156,13 @@ function updateBoard(board, player) {
   });
 }
 
-function move(dir) {
-  player.position.x += dir;
-  if (hit(board, player)) {
-    player.position.x = player.position.x - dir;
-  }
-}
-
-
-// review this function and why rotate piece inner loop has to be x < y
-function rotate(dir) {
-  const pos = player.position.x;
-  let shift = 1;
-  rotatePiece(player.currentPiece, dir);
-  while (hit(board, player)) {
-    player.position.x += shift;
-    shift = -shift + shift > 0 ? 1 : -1;
-    if (shift > player.currentPiece[0].length){
-      player.position.x = pos;
-      rotatePiece(player.currentPiece, -dir);
-      return;
-    }
-  }
-}
-
-function rotatePiece(piece, dir) {
-  for (let y = 0; y < piece.length; ++y) {
-    for (let x = 0; x < y; ++x) {
-      [
-        piece[x][y],
-        piece[y][x]
-      ] = [
-        piece[y][x],
-        piece[x][y]
-      ];
-    }
-  }
-  if (dir > 0) {
-    piece.forEach(row => row.reverse());
-  } else {
-    piece.reverse();
-  }
-}
-
-
-function playerReset() {
-  const pieces = 'ILJOSTZ';
-  player.currentPiece = createPiece(pieces[pieces.length * Math.random() | 0]);
-  player.position.y = 0;
-  player.position.x = (board[0].length / 2 | 0) -
-                      (player.currentPiece[0].length / 2 | 0);
-
-  if (hit(board, player)) {
-    clearBoard();
-    player.score = 0;
-    dropInterval = 1000;
-  }
-}
-
 let lastTime = 0;
-let dropCounter = 0;
-let dropInterval = 1000;
 
 function update(time = 0) {
   timeElapsed = time - lastTime;
   lastTime = time;
 
-  dropCounter += timeElapsed;
-  if (dropCounter > dropInterval) {
-    drop();
-    }
+  player.update(timeElapsed);
 
   draw();
   requestAnimationFrame(update);
@@ -246,26 +172,28 @@ function updateScore() {
   document.getElementById('score').innerText = player.score;
 }
 
+const player = new Player();
+
 document.addEventListener('keydown', event => {
   switch (event.keyCode) {
     case 83:
-      drop();
+      player.fall();
       return;
     case 65:
-      move(-1);
+      player.slide(-1);
       return;
     case 68:
-      move(1);
+      player.slide(1);
       return;
     case 81:
-      rotate(-1);
+      player.spin(-1);
       return;
     case 87:
-      rotate(1);
+      player.spin(1);
       return;
   }
 });
 
-playerReset();
+player.reset();
 update();
 updateScore();
