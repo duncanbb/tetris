@@ -246,12 +246,6 @@ function updateScore() {
   document.getElementById('score').innerText = player.score;
 }
 
-const player = {
-  position: {x: null, y: null},
-  currentPiece: createPiece('J'),
-  score: 0,
-};
-
 document.addEventListener('keydown', event => {
   switch (event.keyCode) {
     case 83:
