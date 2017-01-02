@@ -6,9 +6,20 @@ body {
   text-align: center;
 }
 
+header {
+  height: 10vh;
+  padding-bottom: 10px;
+}
+
+img {
+  height: 10vh;
+  float: left;
+}
+
 canvas {
   border: solid .2em #fff;
-  height: 85vh;
+  height: 80vh;
+  margin: auto;
 }
 
 .controls {
