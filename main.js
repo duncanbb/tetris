@@ -62,7 +62,7 @@ function createPiece(type) {
 }
 
 function updateScore() {
-  document.getElementById('score').innerText = tetris.player.score;
+  document.getElementById('score').innerText = "score: " + tetris.player.score;
 }
 
 const tetris = new Tetris(canvas);
@@ -70,19 +70,19 @@ const tetris = new Tetris(canvas);
 document.addEventListener('keydown', event => {
   switch (event.keyCode) {
     case 83:
-      player.fall();
+      tetris.player.fall();
       return;
     case 65:
-      player.slide(-1);
+      tetris.player.slide(-1);
       return;
     case 68:
-      player.slide(1);
+      tetris.player.slide(1);
       return;
     case 81:
-      player.spin(-1);
+      tetris.player.spin(-1);
       return;
     case 87:
-      player.spin(1);
+      tetris.player.spin(1);
       return;
   }
 });

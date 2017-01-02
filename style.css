@@ -1,12 +1,24 @@
 body {
-  background: #202028;
+  background: #9E9E9E;
   color: #fff;
-  font-family: sans-serif;
-  font-size: 2em;
+  font-family: 'joystix', sans-serif;
+  font-size: 24px;
   text-align: center;
 }
 
 canvas {
   border: solid .2em #fff;
-  height: 90vh;
+  height: 85vh;
+}
+
+.controls {
+  float: left;
+  font-size: 12px;
+}
+
+@font-face {
+  font-family: 'joystix';
+  src: url('joystix.eot');
+  src: local('joystix'), local('joystix'),
+         url('joystix.otf') format('opentype');
 }

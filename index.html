@@ -4,10 +4,40 @@
     <meta charset="utf-8">
     <title>Tetrus</title>
      <link rel="stylesheet" type="text/css" href="style.css">
+     <link rel="shortcut icon" href="tetris_logo.png" type="image/x-icon">
   </head>
   <body>
+    <article class="controls">
+         <table>
+           <tr>
+             <th>Action</th>
+             <th>Key</th>
+           </tr>
+           <tr>
+             <td>Spin Right</td>
+             <td>W</td>
+           </tr>
+           <tr>
+             <td>Move Left</td>
+             <td>A</td>
+           </tr>
+           <tr>
+             <td>Move Right</td>
+             <td>D</td>
+           </tr>
+           <tr>
+             <td>Move Down</td>
+             <td>S</td>
+           </tr>
+           <tr>
+             <td>Spin Left</td>
+             <td>Q</td>
+           </tr>
+         </table>
+       </article>
     <canvas id="tetris" width="240" height="400"></canvas>
     <div id="score">
+      Score:
     </div>
     <script src="board.js"></script>
     <script src="player.js"></script>
