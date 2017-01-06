@@ -36,5 +36,5 @@ img {
 
 #nextPiece {
   width: 20vh;
-  background-color: black;
+  height: auto;
 }
