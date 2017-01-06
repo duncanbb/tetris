@@ -6,17 +6,7 @@ body {
   text-align: center;
 }
 
-header {
-  height: 10vh;
-  padding-bottom: 10px;
-}
-
-img {
-  max-height: 100px;
-  float: left;
-}
-
-canvas {
+#tetris, #nextPiece {
   border: solid .2em #fff;
   height: 80vh;
   margin: auto;
@@ -27,9 +17,24 @@ canvas {
   font-size: 12px;
 }
 
+header {
+  height: 10vh;
+  padding-bottom: 10px;
+}
+
+img {
+  max-height: 100px;
+  float: left;
+}
+
 @font-face {
   font-family: 'joystix';
   src: url('joystix.eot');
   src: local('joystix'), local('joystix'),
          url('joystix.otf') format('opentype');
+}
+
+#nextPiece {
+  width: 20vh;
+  background-color: black;
 }
