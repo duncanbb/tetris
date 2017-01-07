@@ -6,10 +6,20 @@ body {
   text-align: center;
 }
 
-#tetris, #nextPiece {
+#tetris, #nextPiece, #holdPiece {
   border: solid .2em #fff;
   height: 80vh;
   margin: auto;
+}
+
+ul {
+  float: left;
+  width: 20%;
+}
+
+li {
+  list-style: none;
+  display: block;
 }
 
 .controls {
@@ -37,4 +47,17 @@ img {
 #nextPiece {
   width: 20vh;
   height: auto;
+}
+
+#holdPiece {
+  width: 20vh;
+  height: auto;
+}
+
+.next-piece {
+  float: left;
+}
+
+.sidebar {
+  float: right;
 }
