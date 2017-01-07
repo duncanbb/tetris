@@ -9,7 +9,14 @@ body {
 #tetris, #nextPiece, #holdPiece {
   border: solid .2em #fff;
   height: 80vh;
-  margin: auto;
+  width: auto;
+  float: left;
+}
+
+.canvas-area {
+  margin: 0 auto;
+  margin-left: 33vw;
+  text-align: left;
 }
 
 ul {
@@ -24,6 +31,7 @@ li {
 
 .controls {
   float: left;
+  display: block;
   font-size: 12px;
 }
 
@@ -45,12 +53,12 @@ img {
 }
 
 #nextPiece {
-  width: 20vh;
+  width: 16vw;
   height: auto;
 }
 
 #holdPiece {
-  width: 20vh;
+  width: 16vw;
   height: auto;
 }
 
@@ -59,5 +67,5 @@ img {
 }
 
 .sidebar {
-  float: right;
+  float: left;
 }
