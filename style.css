@@ -42,7 +42,7 @@ ul {
 
 .controls {
   float: left;
-  display: none;
+  width: auto;
 }
 
 .sidebar {
