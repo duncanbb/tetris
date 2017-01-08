@@ -13,7 +13,12 @@
  </header>
 
   <body>
-    <article class="controls">
+    <div id="game-over">
+        <h2>GAME OVER</h2>
+        <h3 id="final-score"></h3>
+        <h4>Click to play again</h4>
+    </div>
+    <article class="controls group">
          <table>
            <tr>
              <th>Action</th>
@@ -51,7 +56,7 @@
        </article>
     <div class="canvas-area">
       <canvas id="tetris" width="240" height="400"></canvas>
-      <ul class="sidebar">
+      <ul class="sidebar group">
         <li class="next-piece">
           <h2>Next Piece:</h2>
           <canvas id="nextPiece" width="100" height="100"></canvas>

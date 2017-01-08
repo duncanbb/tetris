@@ -6,35 +6,6 @@ body {
   text-align: center;
 }
 
-#tetris, #nextPiece, #holdPiece {
-  border: solid .2em #fff;
-  height: 80vh;
-  width: auto;
-  float: left;
-}
-
-.canvas-area {
-  margin: 0 auto;
-  margin-left: 33vw;
-  text-align: left;
-}
-
-ul {
-  float: left;
-  width: 20%;
-}
-
-li {
-  list-style: none;
-  display: block;
-}
-
-.controls {
-  float: left;
-  display: block;
-  font-size: 12px;
-}
-
 header {
   height: 10vh;
   padding-bottom: 10px;
@@ -45,6 +16,39 @@ img {
   float: left;
 }
 
+li {
+  list-style: none;
+  display: block;
+  float: left;
+}
+
+ul {
+  float: left;
+  width: 20%;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.canvas-area {
+  margin: 0 auto;
+  margin-left: 33vw;
+  text-align: left;
+  font-size: 12px;
+}
+
+.controls {
+  float: left;
+  display: none;
+}
+
+.sidebar {
+  float: left;
+}
+
 @font-face {
   font-family: 'joystix';
   src: url('joystix.eot');
@@ -52,9 +56,23 @@ img {
          url('joystix.otf') format('opentype');
 }
 
-#nextPiece {
-  width: 20vh;
-  height: auto;
+#tetris, #nextPiece, #holdPiece {
+  border: solid .2em #fff;
+  height: 80vh;
+  width: auto;
+  float: left;
+}
+
+#game-over{
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  vertical-align:bottom;
+  z-index: 1;
+  top: 0;
+  background: #101010;
+  text-align: center
 }
 
 #holdPiece {
@@ -62,10 +80,11 @@ img {
   height: auto;
 }
 
-.next-piece {
-  float: left;
+#nextPiece {
+  width: 20vh;
+  height: auto;
 }
 
-.sidebar {
-  float: left;
+#score {
+  margin-top: 20px;
 }
