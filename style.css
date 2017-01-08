@@ -1,5 +1,5 @@
 body {
-  background: #9E9E9E;
+  background: #101010;
   color: #fff;
   font-family: 'joystix', sans-serif;
   font-size: 1.4vw;
@@ -53,12 +53,12 @@ img {
 }
 
 #nextPiece {
-  width: 16vw;
+  width: 20vh;
   height: auto;
 }
 
 #holdPiece {
-  width: 16vw;
+  width: 20vh;
   height: auto;
 }
 
