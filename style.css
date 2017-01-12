@@ -6,6 +6,11 @@ body {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 header {
   height: 10vh;
   padding-bottom: 10px;
