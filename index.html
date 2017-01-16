@@ -5,6 +5,7 @@
     <title>Tetris</title>
      <link rel="stylesheet" type="text/css" href="style.css">
      <link rel="shortcut icon" href="tetris_logo.png" type="image/x-icon">
+     <base target="_top">
   </head>
 
   <header>
@@ -12,7 +13,7 @@
    <h1>A totally original game!</h1>
  </header>
 
-  <body>
+  <body id="top">
     <div id="game-over">
         <h2>GAME OVER</h2>
         <h3 id="final-score"></h3>
@@ -71,19 +72,21 @@
         <div id="score">
           Score:
         </div>
-        <!-- <article style="padding-top:10px">
+        <article style="padding-top:10px">
           <table>
-            <tr>
-              <td><a href="http://www.duncanbeebe.com/">Portfolio</a></td>
-            </tr>
             <tr>
               <td><a href="https://github.com/duncanbb">Github</a></td>
             </tr>
             <tr>
+              <td>
+                <a href="http://www.duncanbeebe.com/">Portfolio</a>
+              </td>
+            </tr>
+            <tr
               <td><a href="https://www.linkedin.com/in/duncan-beebe-251503101">LinkedIn</a></td>
             </tr>
           </table>
-        </article> -->
+        </article>
       <ul/>
     <div/>
     <script src="./lib/board.js"></script>
